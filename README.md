@@ -480,9 +480,3 @@ components/ui/
 
 types/index.ts                 # All TypeScript interfaces
 ```
-
----
-
-## License
-
-MIT
