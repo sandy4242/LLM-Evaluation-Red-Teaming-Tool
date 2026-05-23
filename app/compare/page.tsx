@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 import ModelCompareTable from '@/components/ui/ModelCompareTable'
 
 const MODELS = [
-  'gemini-1.5-pro',
+  'gemini-2.0-flash',
   'gemini-1.5-flash',
-  'gemini-2.0-flash'
+  'gemini-2.0-flash-lite'
 ]
 
 export default function ComparePage() {
@@ -14,7 +14,7 @@ export default function ComparePage() {
   const [suiteId, setSuiteId] = useState('')
   const [versions, setVersions] = useState<any[]>([])
   const [versionId, setVersionId] = useState('')
-  const [modelA, setModelA] = useState('gemini-1.5-pro')
+  const [modelA, setModelA] = useState('gemini-2.0-flash')
   const [modelB, setModelB] = useState('gemini-1.5-flash')
   const [running, setRunning] = useState(false)
   const [result, setResult] = useState<any>(null)

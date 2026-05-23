@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 import { callGemini, parseGeminiJSON } from '@/lib/gemini'
 
+// At the very top of your try block in execute/route.ts
+console.log('GEMINI_API_KEY exists:', !!process.env.GEMINI_API_KEY)
+console.log('GEMINI_API_KEY prefix:', process.env.GEMINI_API_KEY?.slice(0, 8))
 // --- Scoring helpers ---
 
 function scoreExactMatch(
@@ -171,6 +174,10 @@ export async function POST(req: NextRequest) {
       )
 
       const modelData = await modelResponse.json()
+
+      console.log('Gemini response:', JSON.stringify(modelData, null, 2))
+      console.log('Model response ok:', modelResponse.ok)
+
       const output: string =
         modelData.candidates?.[0]?.content?.parts?.[0]?.text ?? ''
       const tokensUsed: number =

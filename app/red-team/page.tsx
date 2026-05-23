@@ -7,7 +7,7 @@ export default function RedTeamPage() {
   const [suites, setSuites] = useState<any[]>([])
   const [suiteId, setSuiteId] = useState('')
   const [input, setInput] = useState('')
-  const [model, setModel] = useState('gemini-1.5-pro')
+  const [model, setModel] = useState('gemini-2.0-flash')
   const [runId, setRunId] = useState('')
   const [running, setRunning] = useState(false)
   const [result, setResult] = useState<any>(null)
